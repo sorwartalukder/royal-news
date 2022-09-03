@@ -11,13 +11,76 @@
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div>
+                    <h1 class="navbar-brand text-success fs-2">Royal News</h1>
+                </div>
+                <div class="d-flex">
+                    <a class="navbar-brand " href="index.html">News</a>
+                    <a class="navbar-brand text-primary" href="">Blog</a>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <hr>
+        </div>
+    </header>
+    <main>
+        <article class="container">
+            <h3>Question:1 What are the differences between var,let and const.</h3>
+            <p>
+                -- Let: It allows the user to define BOTH GLOBAL/LOCAL SCOPE VARIABLE. If you use Let in a function,
+                then
+                it means the user is defining a local variable but if the user is defining a variable with Let outside
+                the function, then the user is defining a global variable. <br>
 
+                --Var: It allows the user to define ONLY GLOBAL SCOPE VARIABLE irrespective of the fact that where the
+                variable has been defined. <br>
 
+                -- Const: It’s quite similar to Let with the only difference that once the variable has been defined
+                then
+                its value cannot be changed. Like if the user tries to change the value of the const variable, then they
+                will get an error.
+            </p>
+            <h3>Question:2 Difference between arrow function and regular function.</h3>
+            <p>
+                -- Arrow function: Arrow function also called fat arrow function is a new feature introduced in ES6 that
+                is
+                a more concise syntax for writing function expressions. While both regular JavaScript functions and
+                arrow functions work in a similar manner, there are certain differences between them.
+                Arrow function is simple version of regular function. <br>
+                -- Regular function: This function is old version in JavaScript. Some time use this function.
+            </p>
+            <h3>Question:3 What are the differences between Map,foreach,filter and find.</h3>
+            <p>
+                --map: The map function always returns the new array with the same length as the original.
+                <br>
+                --forEach: The forEach method allows you to run a function for every element of the array. forEach
+                doesn’t
+                return anything. <br>
 
+                -- filter: filter works like the find function, but instead of returning the first matched item, filter
+                will return the array of matched items or an empty array if nothing matched. <br>
 
+                --find:The find function returns the first item that matches the callback function, or undefined if
+                there
+                is nothing that matches.
 
-
-
+            </p>
+            <h3>Question:4 Why do we use template strings.</h3>
+            <p>
+                -- Template String: Template string is the feature introduced in ES6. This feature is awesome. Template
+                string feature is multiline, esayly set daynamic proparty etc.
+            </p>
+        </article>
+    </main>
+    <!-- <footer class="bg-dark text-center text-muted py-5  mt-4">
+        <h5>
+            Copyright 2022 Royal News
+        </h5>
+    </footer> -->
     <script src="js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
