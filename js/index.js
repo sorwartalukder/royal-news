@@ -1,9 +1,11 @@
+// news category load
 const loadNewsCategory = () => {
     fetch(' https://openapi.programming-hero.com/api/news/categories')
         .then(res => res.json())
         .then(data => displayNewsCategory(data.data.news_category))
         .catch(error => console.log(error))
 }
+// news category display
 const displayNewsCategory = newsCategory => {
     const newsCategoryField = document.getElementById('news-category')
     newsCategory.forEach(category => {
@@ -17,13 +19,14 @@ const displayNewsCategory = newsCategory => {
 
 loadNewsCategory()
 
-
+// load news
 const loadNews = (id) => {
     fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
         .then(res => res.json())
         .then(data => displayNews(data.data))
         .catch(error => console.log(error))
 }
+// display news
 const displayNews = news => {
     const newsField = document.getElementById('news-container')
     newsField.innerHTML = ''
@@ -61,11 +64,13 @@ const displayNews = news => {
     newsCount.innerText = news.length
 
 }
+// search news category
 const searchNews = (id) => {
     loadNews(id)
     toggleSpinner(true)
 
 }
+// loading spinner
 const toggleSpinner = isLoading => {
     const newsLoading = document.getElementById('news-loading')
     if (isLoading) {
@@ -76,12 +81,14 @@ const toggleSpinner = isLoading => {
     }
 }
 loadNews('01')
+// load news details
 const loadNewsDetails = id => {
     fetch(` https://openapi.programming-hero.com/api/news/${id}`)
         .then(res => res.json())
         .then(data => displayNewsDetails(data.data[0]))
         .catch(error => console.log(error))
 }
+// display news details
 const displayNewsDetails = news => {
     const newsTitle = document.getElementById('newsDetailsModalLabel')
     newsTitle.innerHTML = `${news.title}`;
