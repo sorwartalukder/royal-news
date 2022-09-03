@@ -30,42 +30,50 @@
             <nav id="news-category" class="navbar container">
             </nav>
         </section>
+        <section id="news-loading" class="d-flex justify-content-center align-items-center d-none"
+            style="height: 400px;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </section>
     </header>
     <main>
-        <section class="container mt-5">
+        <section class="container rounded bg-light text-primary my-4 py-2">
+            <h3><span id="news-count">4 </span> News found Today</h3>
+        </section>
+        <section class="container ">
 
             <div id="news-container" class="row row-cols-1 row-cols-md-3 g-4">
 
             </div>
         </section>
+        <section>
+            <div class="modal fade" id="newsDetailsModal" tabindex="-1" aria-labelledby="newsDetailsModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="newsDetailsModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="newsDetailsBody" class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="text-center text-muted my-5">
+    <footer class="bg-dark text-center text-muted py-5  mt-4">
         <h5>
             Copyright 2022 Royal News
         </h5>
 
     </footer>
 
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="newsDetailsModal" tabindex="-1" aria-labelledby="newsDetailsModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newsDetailsModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="newsDetailsBody" class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

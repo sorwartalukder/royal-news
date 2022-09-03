@@ -2,6 +2,7 @@ const loadNewsCategory = () => {
     fetch(' https://openapi.programming-hero.com/api/news/categories')
         .then(res => res.json())
         .then(data => displayNewsCategory(data.data.news_category))
+        .catch(error => console.log(error))
 }
 const displayNewsCategory = newsCategory => {
     const newsCategoryField = document.getElementById('news-category')
@@ -21,6 +22,7 @@ const loadNews = (id) => {
     fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
         .then(res => res.json())
         .then(data => displayNews(data.data))
+        .catch(error => console.log(error))
 }
 const displayNews = news => {
     const newsField = document.getElementById('news-container')
@@ -54,19 +56,33 @@ const displayNews = news => {
         `
         newsField.appendChild(newsDiv)
     })
+    toggleSpinner(false)
+    const newsCount = document.getElementById('news-count')
+    newsCount.innerText = news.length
+
 }
 const searchNews = (id) => {
     loadNews(id)
+    toggleSpinner(true)
 
+}
+const toggleSpinner = isLoading => {
+    const newsLoading = document.getElementById('news-loading')
+    if (isLoading) {
+        newsLoading.classList.remove('d-none')
+    }
+    else {
+        newsLoading.classList.add('d-none')
+    }
 }
 loadNews('01')
 const loadNewsDetails = id => {
     fetch(` https://openapi.programming-hero.com/api/news/${id}`)
         .then(res => res.json())
         .then(data => displayNewsDetails(data.data[0]))
+        .catch(error => console.log(error))
 }
 const displayNewsDetails = news => {
-    console.log(news)
     const newsTitle = document.getElementById('newsDetailsModalLabel')
     newsTitle.innerHTML = `${news.title}`;
     const newsDetailsBody = document.getElementById('newsDetailsBody')
@@ -79,7 +95,3 @@ const displayNewsDetails = news => {
     <p >Published Details: ${news.author.published_date ? news.author.published_date : 'No Details'}</p>
     `
 }
-/*
-view
-athor
-*/
