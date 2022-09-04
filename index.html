@@ -33,15 +33,21 @@
         </div>
         <!-- news category section  -->
         <section>
-            <nav id="news-category" class="navbar container">
+            <nav class="navbar navbar-expand-xl">
+                <div class="container bg-light py-2 rounded">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- news category container  -->
+                        <ul id="news-category" class="navbar-nav  mx-auto mb-2 mb-lg-0">
+
+                        </ul>
+                    </div>
+                </div>
             </nav>
-        </section>
-        <!-- loading spinner -->
-        <section id="news-loading" class="d-flex justify-content-center align-items-center d-none"
-            style="height: 400px;">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
         </section>
     </header>
     <!-- main section  -->
@@ -49,6 +55,13 @@
         <!-- news count  -->
         <section class="container rounded bg-light text-primary my-4 py-2">
             <h3><span id="news-count">4 </span> News found Today</h3>
+        </section>
+        <!-- loading spinner -->
+        <section id="news-loading" class="d-flex justify-content-center align-items-center d-none"
+            style="height: 400px;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </section>
         <!-- news  -->
         <section class="container ">
@@ -85,6 +98,16 @@
         </h5>
 
     </footer>
+
+
+
+
+
+
+
+
+
+
     <!-- js file link  -->
     <script src="js/index.js"></script>
     <!-- bootstrap js link  -->

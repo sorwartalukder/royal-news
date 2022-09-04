@@ -9,11 +9,12 @@ const loadNewsCategory = () => {
 const displayNewsCategory = newsCategory => {
     const newsCategoryField = document.getElementById('news-category')
     newsCategory.forEach(category => {
-        const categoryDiv = document.createElement('div')
-        categoryDiv.innerHTML = `
-                    <a onclick="searchNews('${category.category_id}')" class="navbar-brand" href="#">${category.category_name}</a>
+        const categoryName = document.createElement('li')
+        categoryName.classList.add('nav-item')
+        categoryName.innerHTML = `
+                    <a onclick="searchNews('${category.category_id}')" class="nav-link  me-lg-4 me-xxl-5 fw-semibold" aria-current="page" href="#">${category.category_name}</a>
         `
-        newsCategoryField.appendChild(categoryDiv)
+        newsCategoryField.appendChild(categoryName)
     })
 }
 
@@ -28,9 +29,11 @@ const loadNews = (id) => {
 }
 // display news
 const displayNews = news => {
+
     const newsField = document.getElementById('news-container')
     newsField.innerHTML = ''
     news.forEach(n => {
+
         const newsDiv = document.createElement('div')
         newsDiv.classList.add("col");
         newsDiv.innerHTML = `
@@ -49,7 +52,6 @@ const displayNews = news => {
             </div>
             <div class="ms-3 ">
                 <h5 >${n.total_view ? n.total_view : ''}</h5>
-               
             </div>
             <div class="me-3 ">
             <button onclick="loadNewsDetails('${n._id}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newsDetailsModal">More</button>
@@ -62,13 +64,12 @@ const displayNews = news => {
     toggleSpinner(false)
     const newsCount = document.getElementById('news-count')
     newsCount.innerText = news.length
-
 }
 // search news category
+
 const searchNews = (id) => {
     loadNews(id)
     toggleSpinner(true)
-
 }
 // loading spinner
 const toggleSpinner = isLoading => {
@@ -91,7 +92,8 @@ const loadNewsDetails = id => {
 // display news details
 const displayNewsDetails = news => {
     const newsTitle = document.getElementById('newsDetailsModalLabel')
-    newsTitle.innerHTML = `${news.title}`;
+
+    newsTitle.innerText = `${news.title}`;
     const newsDetailsBody = document.getElementById('newsDetailsBody')
     newsDetailsBody.innerHTML = `
     <img src="${news.thumbnail_url}" class="card-img-top" alt="...">
